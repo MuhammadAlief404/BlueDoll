@@ -7,12 +7,12 @@ Objective :
   - Check Store Location via Google Map
 
 Database :
-  Table User :
+  - Table User :
     - id (PK)
     - name
     - email
     - password
-  Table dolls :
+  - Table dolls :
     - id (PK)
     - name 
     - description
