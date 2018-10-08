@@ -24,7 +24,7 @@
             android:layout_marginRight="10dp">
 
             <android.support.design.widget.TextInputEditText
-                android:id="@+id/edtName"
+                android:id="@+id/edtDollName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Name" />
@@ -36,7 +36,7 @@
             android:layout_margin="10dp">
 
             <android.support.design.widget.TextInputEditText
-                android:id="@+id/edtDesc"
+                android:id="@+id/edtDollDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Description"
@@ -50,6 +50,8 @@
         </Spinner>
         
         <Button
+            android:id="@+id/btnDollSubmit"
+            android:onClick="DollAdd"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

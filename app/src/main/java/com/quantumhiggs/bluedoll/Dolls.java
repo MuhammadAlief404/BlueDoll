@@ -7,6 +7,14 @@ public class Dolls {
     private String desc;
     private String image;
 
+    public Dolls (String id, String name, String desc, String image)
+    {
+        this.id = id;
+        this.name = name;
+        this.desc = desc;
+        this.image = image;
+    }
+
     public String getId() {
         return id;
     }
