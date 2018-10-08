@@ -1,5 +1,6 @@
 package com.quantumhiggs.bluedoll;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,11 +8,15 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Vector;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText edtEmail,edtName,edtPass,edtcPass;
     private Boolean isValid = false;
     private CheckBox chkAgree;
+
+    private Vector<Users> usr = new Vector<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +34,25 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void registerClick(View view)
     {
-        String mail,name,pass,cPass;
+        String id,mail,name,pass,cPass;
 
+        id = "USR001";
         mail = edtEmail.getText().toString();
         name = edtName.getText().toString();
         pass = edtPass.getText().toString();
         cPass = edtcPass.getText().toString();
 
 
-        if(validatePassword(pass,6) == true)
+        if(mail.isEmpty() == false && name.isEmpty() == false && pass.isEmpty() == false && cPass.isEmpty() == false == chkAgree.isChecked())
         {
-                Toast.makeText(this, "Berhasil Bege", Toast.LENGTH_SHORT).show();
+            if (pass.equals(cPass))
+            {
+                usr.add(new Users(id,mail,name,pass));
+                Toast.makeText(this, "Registration Success", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
         }
     }
 

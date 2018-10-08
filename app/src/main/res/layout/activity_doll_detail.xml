@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DollDetailActivity"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgDollDetail"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_launcher_background"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/tvDNameDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dolls Name"
+        android:layout_margin="10dp"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/tvDDescDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dolls Descriptions"
+        android:layout_margin="10dp"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edtPhoneDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="+62"
+        android:layout_margin="10dp"
+        android:layout_gravity="bottom"/>
+
+</LinearLayout>

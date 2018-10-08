@@ -3,9 +3,17 @@ package com.quantumhiggs.bluedoll;
 public class Users {
 
     private String id;
-    private String name;
     private String email;
+    private String name;
     private String password;
+
+    public Users (String id,String email, String name, String password)
+    {
+        this.id = id;
+        this.email = email;
+        this.name = name;
+        this.password = password;
+    }
 
     public String getId() {
         return id;
