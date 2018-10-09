@@ -16,8 +16,6 @@ public class RegisterActivity extends AppCompatActivity {
     private Boolean isValid = false;
     private CheckBox chkAgree;
 
-    private Vector<Users> usr = new Vector<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,13 +45,21 @@ public class RegisterActivity extends AppCompatActivity {
         {
             if (pass.equals(cPass))
             {
-                usr.add(new Users(id,mail,name,pass));
+                for(int i=0;i<Data.tbUser.size();i++)
+                {
+                    if(Data.tbUser.get(i).getEmail().equals(mail))
+                    {
+                        Toast.makeText(this, "Email already registered", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                Data.tbUser.add(new Users(id,mail,name,pass));
                 Toast.makeText(this, "Registration Success", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
-                finish();
+//                finish();
             }
         }
+        Toast.makeText(this, "user size "+Data.tbUser.size(), Toast.LENGTH_SHORT).show();
     }
 
     boolean validatePassword(String password, int n) {

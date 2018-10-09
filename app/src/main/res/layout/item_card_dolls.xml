@@ -30,7 +30,15 @@
                 android:text="Doll Name"
                 android:textSize="24sp"
                 android:paddingLeft="20dp"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:id="@+id/tvDollDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Doll Name"
+                android:textSize="24sp"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="10dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

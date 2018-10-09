@@ -14,7 +14,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText edtUsr, edtPass;
 
-    private Vector<Users> tbUser = new Vector<>();
+//    private Vector<Users> tbUser = new Vector<>();
+
+    private Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,31 +25,34 @@ public class LoginActivity extends AppCompatActivity {
 
         edtUsr = findViewById(R.id.edtUser);
         edtPass = findViewById(R.id.edtPass);
+        btnLogin = findViewById(R.id.btnLogin);
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String user,pass;
+
+                user = edtUsr.getText().toString();
+                pass = edtPass.getText().toString();
+
+//                for (int i=0;i<tbUser.size();i++)
+//                {
+                    if(Data.tbUser.get(0).getName().equals(user) && Data.tbUser.get(0).getPassword().equals(pass))
+                    {
+                        Intent intent = new Intent(LoginActivity.this, ViewActivity.class);
+                        startActivity(intent);
+//                        finish();
+                    }
+                    else
+                    {
+                        Toast.makeText(LoginActivity.this, "LOL", Toast.LENGTH_SHORT).show();
+                    }
+//                }
+
+            }
+        });
     }
 
-    public void loginClick(View view)
-    {
-        String user,pass;
-
-        user = edtUsr.getText().toString();
-        pass = edtPass.getText().toString();
-
-        for (int i=0;i<tbUser.size();i++)
-        {
-            if(tbUser.get(i).getName().equals(user) && tbUser.get(i).getPassword().equals(pass))
-            {
-//                Toast.makeText(this, "Logged In", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, ViewActivity.class);
-                startActivity(intent);;
-                finish();
-            }
-            else
-            {
-                Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
-            }
-        }
-
-    }
 
     public void createClick(View view) {
         Intent intent = new Intent(this,RegisterActivity.class);
