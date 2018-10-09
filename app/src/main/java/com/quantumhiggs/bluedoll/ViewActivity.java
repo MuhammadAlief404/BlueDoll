@@ -15,9 +15,7 @@ import java.util.Vector;
 
 public class ViewActivity extends AppCompatActivity {
 
-    private RecyclerView rvDoll;
-
-    private Vector<Dolls> list = new Vector<>();
+    RecyclerView rvDoll;
 
 
     @Override
@@ -70,7 +68,13 @@ public class ViewActivity extends AppCompatActivity {
     private void showDolls(){
         rvDoll.setLayoutManager(new LinearLayoutManager(this));
         DollAdapter cardViewPresidentAdapter = new DollAdapter(this);
-        cardViewPresidentAdapter.setListDolls(list);
+        cardViewPresidentAdapter.setListDolls(Data.tbDoll);
         rvDoll.setAdapter(cardViewPresidentAdapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        showDolls();
     }
 }

@@ -1,6 +1,7 @@
 package com.quantumhiggs.bluedoll;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -43,12 +44,15 @@ public class DollAdapter extends RecyclerView.Adapter<DollAdapter.CardViewViewHo
     {
         final Dolls doll = getListDolls().get(i);
 
+        cardViewViewHolder.tvDollName.setText(doll.getName().toString());
+
         //view clicked
         cardViewViewHolder.btnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "View in "+getListDolls().get(i).getName(), Toast.LENGTH_SHORT).show();
-
+                Intent intent = new Intent(context,DollDetailActivity.class);
+                context.startActivity(intent);
                 /* TODO
                 * Intent ke Doll Detail Activity
                 * tambahin intent put extra untuk :
@@ -63,6 +67,8 @@ public class DollAdapter extends RecyclerView.Adapter<DollAdapter.CardViewViewHo
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "modif in "+getListDolls().get(i).getName(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context,ModifDollActivity.class);
+                context.startActivity(intent);
                 /* TODO
                  * Intent ke Modif Doll Activity
                  * tambahin intent put extra untuk :

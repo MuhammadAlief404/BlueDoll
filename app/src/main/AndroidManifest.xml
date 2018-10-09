@@ -41,7 +41,8 @@
 
         <activity
             android:name=".StoreActivity"
-            android:label="@string/title_activity_store"></activity>
+            android:label="@string/title_activity_store" />
+        <activity android:name=".ModifDollActivity"></activity>
     </application>
 
 </manifest>
