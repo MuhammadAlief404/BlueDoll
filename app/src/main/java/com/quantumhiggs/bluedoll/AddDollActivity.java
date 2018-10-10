@@ -23,6 +23,8 @@ public class AddDollActivity extends AppCompatActivity implements AdapterView.On
     Spinner spinImage;
     Button btnSubmit;
 
+    MySpinnerAdapter mySpinnerAdapter = new MySpinnerAdapter();
+
     Vector<Dolls> doll = new Vector<>();
 
     private static final Integer[] dollImage = {R.drawable.doll1, R.drawable.doll2, R.drawable.doll3,
@@ -59,8 +61,8 @@ public class AddDollActivity extends AppCompatActivity implements AdapterView.On
                 String desc = edtDesc.getText().toString();
                 String image = "";
 
-                doll.add(new Dolls(id,name,desc,image));
-                Toast.makeText(getApplicationContext(), "Size " + doll.size(), Toast.LENGTH_SHORT).show();
+                Data.tbDoll.add(new Dolls(id,name,desc,image));
+                Toast.makeText(getApplicationContext(), "nama " + image, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(),ViewActivity.class);
                 startActivity(intent);
 
@@ -71,7 +73,7 @@ public class AddDollActivity extends AppCompatActivity implements AdapterView.On
 
 
 
-    //--------------------------------------------------------------------------------------
+    //------------------------------Spinner Adapter-----------------------------------------------------
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

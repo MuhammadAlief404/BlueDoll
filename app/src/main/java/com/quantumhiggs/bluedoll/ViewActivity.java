@@ -15,6 +15,7 @@ import java.util.Vector;
 
 public class ViewActivity extends AppCompatActivity {
 
+    Vector<Dolls> vDolls;
     RecyclerView rvDoll;
 
 
@@ -31,8 +32,14 @@ public class ViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ViewActivity.this, AddDollActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
+
+//        Data.tbDoll.add(new Dolls("aaa","test","ea",""));
+//        Data.tbDoll.add(new Dolls("3","a","h",""));
+//        Data.tbDoll.add(new Dolls("2","d","h",""));
+//        Data.tbDoll.add(new Dolls("4","s","h",""));
 
         showDolls();
     }
