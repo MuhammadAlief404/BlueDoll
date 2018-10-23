@@ -49,13 +49,31 @@
             android:layout_height="wrap_content">
         </Spinner>
         
-        <Button
-            android:id="@+id/btnDollSubmit"
-            android:layout_width="200dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="submit"/>
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center">
 
+            <Button
+                android:id="@+id/btnDollSubmit"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="submit"
+                android:background="@color/colorPrimary"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btnDollRemove"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Remove"
+                android:background="@drawable/bg_remove"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
 
     </LinearLayout>
 

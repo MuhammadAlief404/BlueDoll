@@ -2,12 +2,12 @@ package com.quantumhiggs.bluedoll;
 
 public class Users {
 
-    private String id;
+    private int id;
     private String email;
     private String name;
     private String password;
 
-    public Users (String id,String email, String name, String password)
+    public Users (int id,String email, String name, String password)
     {
         this.id = id;
         this.email = email;
@@ -15,11 +15,11 @@ public class Users {
         this.password = password;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

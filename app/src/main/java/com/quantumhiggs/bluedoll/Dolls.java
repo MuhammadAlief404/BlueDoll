@@ -5,9 +5,9 @@ public class Dolls {
     private String id;
     private String name;
     private String desc;
-    private String image;
+    private int image;
 
-    public Dolls (String id, String name, String desc, String image)
+    public Dolls (String id, String name, String desc, int image)
     {
         this.id = id;
         this.name = name;
@@ -39,11 +39,11 @@ public class Dolls {
         this.desc = desc;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 }

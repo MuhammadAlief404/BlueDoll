@@ -31,15 +31,16 @@
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"    >
 
-        <android.support.design.widget.TextInputEditText
+        <EditText
             android:id="@+id/edtPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:hint="Password" />
+
     </android.support.design.widget.TextInputLayout>
 
     <TextView
@@ -58,7 +59,8 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Login"/>
+        android:text="Login"
+        android:background="@color/colorPrimary"/>
 
 
 </LinearLayout>

@@ -15,7 +15,6 @@ import java.util.Vector;
 
 public class ViewActivity extends AppCompatActivity {
 
-    Vector<Dolls> vDolls;
     RecyclerView rvDoll;
 
 
@@ -62,7 +61,7 @@ public class ViewActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.menu_logout:
-                Intent intent1 = new Intent(ViewActivity.this,StoreActivity.class);
+                Intent intent1 = new Intent(ViewActivity.this,LoginActivity.class);
                 startActivity(intent1);
                 finish();
                 return true;

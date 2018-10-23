@@ -13,8 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -50,7 +48,7 @@ public class DollAdapter extends RecyclerView.Adapter<DollAdapter.CardViewViewHo
 
         cardViewViewHolder.tvDollName.setText(doll.getName().toString());
         cardViewViewHolder.tvDollDesc.setText(doll.getDesc().toString());
-//        cardViewViewHolder.imgDoll.setImageResource((int) doll.getImage());
+        cardViewViewHolder.imgDoll.setImageResource(doll.getImage());
 
         //view clicked
         cardViewViewHolder.btnView.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +58,8 @@ public class DollAdapter extends RecyclerView.Adapter<DollAdapter.CardViewViewHo
                 Intent intent = new Intent(context,DollDetailActivity.class);
                 intent.putExtra("name",getListDolls().get(i).getName());
                 intent.putExtra("desc",getListDolls().get(i).getDesc());
+                intent.putExtra("img",getListDolls().get(i).getImage());
+                intent.putExtra("pos",i);
                 context.startActivity(intent);
 
             }
@@ -70,15 +70,13 @@ public class DollAdapter extends RecyclerView.Adapter<DollAdapter.CardViewViewHo
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "modif in "+getListDolls().get(i).getName(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(context,ModifDollActivity.class);
+                Intent intent = new Intent(context,AddDollActivity.class);
+                intent.putExtra("name",getListDolls().get(i).getName());
+                intent.putExtra("desc",getListDolls().get(i).getDesc());
+                intent.putExtra("img",getListDolls().get(i).getImage());
+                intent.putExtra("img2",i);
+                intent.putExtra("job","edit");
                 context.startActivity(intent);
-                /* TODO
-                 * Intent ke Modif Doll Activity
-                 * tambahin intent put extra untuk :
-                 * nama
-                 * desc
-                 * gambar
-                 * buat activity modif*/
             }
         });
     }

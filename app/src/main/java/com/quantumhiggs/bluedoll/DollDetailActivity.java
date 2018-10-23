@@ -2,6 +2,7 @@ package com.quantumhiggs.bluedoll;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -9,6 +10,7 @@ import org.w3c.dom.Text;
 public class DollDetailActivity extends AppCompatActivity {
 
     TextView tvName,tvDesc;
+    ImageView imgDoll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +19,7 @@ public class DollDetailActivity extends AppCompatActivity {
 
         tvName = findViewById(R.id.tvDNameDetail);
         tvDesc = findViewById(R.id.tvDDescDetail);
+        imgDoll = findViewById(R.id.imgDollDetail);
 
         if(savedInstanceState == null)
         {
@@ -25,6 +28,7 @@ public class DollDetailActivity extends AppCompatActivity {
             {
                 tvName.setText(extras.getString("name"));
                 tvDesc.setText(extras.getString("desc"));
+                imgDoll.setImageResource(extras.getInt("img"));
             }
         }
     }

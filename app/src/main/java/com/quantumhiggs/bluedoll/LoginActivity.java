@@ -35,19 +35,22 @@ public class LoginActivity extends AppCompatActivity {
                 user = edtUsr.getText().toString();
                 pass = edtPass.getText().toString();
 
-//                for (int i=0;i<tbUser.size();i++)
-//                {
-                    if(Data.tbUser.get(0).getName().equals(user) && Data.tbUser.get(0).getPassword().equals(pass))
+                if(Data.tbUser.size() != 0)
+                {
+                    for (int i=0;i<Data.tbUser.size();i++)
                     {
-                        Intent intent = new Intent(LoginActivity.this, ViewActivity.class);
-                        startActivity(intent);
-//                        finish();
+                        if(Data.tbUser.get(i).getEmail().equals(user) && Data.tbUser.get(i).getPassword().equals(pass))
+                        {
+                            Intent intent = new Intent(LoginActivity.this, ViewActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     }
-                    else
-                    {
-                        Toast.makeText(LoginActivity.this, "LOL", Toast.LENGTH_SHORT).show();
-                    }
-//                }
+                }
+                else if(Data.tbUser.size() == 0)
+                {
+                    Toast.makeText(LoginActivity.this, "Please Register Before Login", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -57,5 +60,6 @@ public class LoginActivity extends AppCompatActivity {
     public void createClick(View view) {
         Intent intent = new Intent(this,RegisterActivity.class);
         startActivity(intent);
+        finish();
     }
 }
